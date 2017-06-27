@@ -1,0 +1,39 @@
+<div class="home_head">
+    <div class="home_head_place">北京天安门</div>
+    <div class="search_log"></div>
+</div>
+<div class="mar_main">
+    <div class="mar_left">
+        <ul class="mar_left_items">
+            <li ng-class="{true:'active_li',false:''}[liArr[$index]]" ng-click="initData(item.id,$index)" id="{{item.id}}" ng-repeat="item in liObj"style="background-image: url('{{item.flag}}')">{{item.name}}</li>
+        </ul>
+    </div>
+    <div class="mar_right">
+        <div class="filter">
+            <div class="filter_all" ng-click="show()">{{name}} </div>
+            <div class="filter_sort" ng-click="sortShow()">{{sortName}} </div>
+        </div>
+        <div class="products">
+            <div class="product" ng-repeat="item in data | orderBy:orderStyle" ng-if="judge(item)">
+                <img class="pro_img" src="{{item.img}}">
+                <div class="pro_right">
+                    <p class="pro_tit">{{item.name}}</p>
+                    <p class="pro_jx"><span class="jx" ng-if="item.org_source_value==1">精选</span><span class="myzy">买一赠一</span></p>
+                    <p class="pro_weight">{{item.specifics}}</p>
+                    <p class="price"><span class="nowP" >¥{{item.partner_price}} </span><span class="oldP" ng-if="item.market_price>item.partner_price"> ¥{{item.market_price}}</span></p>
+                </div>
+                <span class="addPro"></span>
+            </div>
+        </div>
+        <div ng-class="{true: 'kind',false:''}[allState]">
+            <span ng-repeat="item in kind" ng-click="allKind($index,item.name)">{{item.name}}</span>
+        </div>
+        <div ng-class="{true:'sort_pro',false:''}[sortState]">
+            <span ng-click="orderStyle='';hideSort('综合排序')">综合排序</span>
+            <span ng-click="orderStyle='-product_num*1';hideSort('销量最高')">销量最高</span>
+            <span ng-click="orderStyle='partner_price*1';hideSort('价格最低')">价格最低</span>
+            <span ng-click="orderStyle='-partner_price*1';hideSort('价格最高')">价格最高</span>
+        </div>
+        <div ng-class="{true: 'mod',false:''}[modState]"></div>
+    </div>
+</div>

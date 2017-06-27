@@ -1,0 +1,69 @@
+<div class="home_head">
+    <div class="home_head_place">北京天安门</div>
+    <div class="search_log"></div>
+</div>
+<!--轮播图-->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="component/home/img/swiper1.jpg"></div>
+        <div class="swiper-slide"><img src="component/home/img/swiper2.jpg"></div>
+        <div class="swiper-slide"><img src="component/home/img/swiper3.jpg"></div>
+        <div class="swiper-slide"><img src="component/home/img/swiper4.jpg"></div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+</div>
+<div class="line"></div>
+<!--//首页的四个圆-->
+<div class="circle">
+    <div class="circle_info" ng-repeat="item in circleData">
+        <div class="circle_info_bcg"style="background-image: url('{{item.activity.img}}');"></div>
+        <p>{{item.activity.name}}</p>
+    </div>
+</div>
+<div class="line"></div>
+<!--六个正方形-->
+<div class="six">
+    <div class="sixImg" ng-repeat="item in sixImg">
+        <img src="{{item.activity.img}}"/>
+    </div>
+</div>
+<div class="line"></div>
+<!--便利店-->
+<div class="store">
+    <img src="{{storeImg}}" class="store_img" alt="">
+    <div class="rank">
+        <img ng-repeat="item in storeTwoImg" class="rank_img" src="{{item.cactivity_detail.img}}"/>
+    </div>
+    <div class="clas">
+        <div class="clas_info" ng-repeat="item in storeFour">
+            <img src="{{item.cicons_detail.img}}"/>
+            <p>{{item.cicons_detail.name}}</p>
+        </div>
+    </div>
+    <div class="twoAdv">
+        <img ng-repeat="item in storeTwoAdv" src="{{item.activity.img}}">
+    </div>
+</div>
+<div class="line"></div>
+<!--商品信息-->
+<div class="home_goods">
+    <div class="goodsInfo" ng-repeat="item in storeInfo">
+        <div class="goods_tit">
+            <p>{{item.category_detail.name}}</p>
+            <span>更多</span>
+        </div>
+        <img class="goodsImg" src="{{item.activity.img}}">
+        <div class="goodsItem">
+            <div class="goodsItem_item" ng-repeat="i in item.category_detail.goods">
+                <img src="{{i.img}}">
+                <p class="item_name">{{i.keywords}}</p>
+                <p class="item_red item_red_in" ng-if="i.pm_desc">{{i.pm_desc}}</p>
+                <p class="item_wei">{{i.specifics}}</p>
+                <p class="item_price"><span>¥{{i.partner_price}} </span><span ng-if="i.market_price>i.partner_price"> ¥{{i.market_price}}</span></p>
+                <div class="addPro"></div>
+            </div>
+        </div>
+        <div class="line"></div>
+    </div>
+</div>

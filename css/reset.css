@@ -1,0 +1,37 @@
+@charset "utf-8";
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+ul,ol,li{
+	list-style: none;
+}
+img{
+	border: none;
+}
+a{
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+body{
+	font: 16px/1.5 "Myriad Set Pro","Lucida Grande","Helvetica Neue",Helvetica,Arial,Verdana,sans-serif,'Microsoft Yahei',Simsun;
+	color: #333;
+	background: #fff;
+	-webkit-text-size-adjust: none;
+	min-width: 320px;
+}
+body,html{
+	height :100%;
+	width:100%;	
+}
+
+.clearfix{
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    clear: both;
+}

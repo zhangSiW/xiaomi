@@ -1,0 +1,35 @@
+#wrap{width: 100%;height: 100%}
+#content{width: 100%;}
+#tab{width: 100%;
+    background:rgba(246,246,246,.95);height: 5rem;
+    position: fixed;bottom: 0}
+#tab>ul{width: 100%;height: 100%;}
+#tab>ul li{height: 100%;width: 25%;text-align: center;display: flex;float: left;justify-content: center;}
+#tab>ul a{font-size: 1.2rem;display: block;width: 100%;padding-top: 3rem;color: #777;
+}
+.sy{
+    background: url("../img/home1.png") no-repeat center .6rem;background-size:  2rem;}
+.sscs{
+    background: url("../img/market1.png") no-repeat center .6rem;background-size: auto 2rem;}
+.gwc{
+    background: url("../img/shopcar1.png") no-repeat center .6rem;background-size: auto 2rem;}
+.wd{
+    background: url("../img/mine1.png") no-repeat center .6rem;background-size: auto 2rem;}
+.active_sy{
+    background: url("../img/home2.png") no-repeat center .6rem;animation: tab 0.3s;background-size: 2rem; }
+.active_sscs{
+    background: url("../img/market2.png") no-repeat center .6rem;animation: tab 0.3s;background-size: 2rem; }
+.active_gwc{
+    background: url("../img/shopcar2.png") no-repeat center .6rem;animation: tab 0.3s;background-size: 2rem; }
+.active_wd{
+    background: url("../img/mine2.png") no-repeat center .6rem;animation: tab 0.3s;background-size: 2rem; }
+@keyframes tab {
+     0%{background-size: .6rem;}
+     25% {  background-size: 1.3rem;  }
+     50% {  background-size:2.2rem;  }
+     75% {  background-size:  1.5rem;  }
+     100% {  background-size: 2rem;  }
+ }
+.home_head{  width:100%;  height: 4.5rem;  background: #ffd600;line-height: 4.5rem;position: fixed;z-index: 100}
+.home_head_place{width:100%;font-size: 1.4rem;font-weight: 700;text-align: center}
+.home_head_place:after{ content: ' ▼ ';  font-size: 1.2rem;}
